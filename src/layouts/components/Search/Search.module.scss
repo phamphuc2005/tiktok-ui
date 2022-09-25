@@ -13,11 +13,13 @@
 
   input {
     flex: 1;
+    height: 100%;
     color: var(--black);
     font-size: 1.6rem;
     padding: 12px 0;
     background-color: transparent;
     caret-color: var(--primary);
+    padding-right: 40px;
   }
 
   input:not(:placeholder-shown) ~ .search-btn {
