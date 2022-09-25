@@ -20,6 +20,8 @@ import Tippy from '@tippyjs/react';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/component/Icons';
 import Image from '~/component/Image';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -87,9 +89,9 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <div className={cx('logo')}>
+        <Link to={routesConfig.home} className={cx('logo-link')}>
           <img src={image.logo} alt="tiktok" />
-        </div>
+        </Link>
 
         <Search />
 
@@ -123,8 +125,8 @@ function Header() {
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
               <Image
-                src="https://p16-sign-va.tiktokcdn.com/musically-maliva-obj/d49908509bbe65491f4271da854c753b~c5_100x100.jpeg?x-expires=1664179200&x-signature=NL5QrHQEcT%2F82CVdRCRxtgxG9WY%3D"
                 className={cx('user-avartar')}
+                src="https://p16-sign-va.tiktokcdn.com/musically-maliva-obj/d49908509bbe65491f4271da854c753b~c5_100x100.jpeg?x-expires=1664179200&x-signature=NL5QrHQEcT%2F82CVdRCRxtgxG9WY%3D"
                 alt="Nguyen Van A"
               />
             ) : (
